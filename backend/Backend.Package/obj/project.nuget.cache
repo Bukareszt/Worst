@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "18lOm7YoWuM63Bu2IfS2cgPxGctCNT5njMfw4rwUMgRNE46qMB34+Sco1/zmshRoHguCSd7pqLSXhi3906fkmQ==",
+  "success": true,
+  "projectFilePath": "/home/kamil/Projects/Worst/src/Backend.Package/Backend.Package.csproj",
+  "expectedPackageFiles": [
+    "/home/kamil/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

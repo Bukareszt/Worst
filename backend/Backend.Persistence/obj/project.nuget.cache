@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1o6bB3eVaMjbSEgT6ZkhY0eq12SSGsDxfSiuAQpYFHlih0sE/+QWTGw4JY2YMkPuuBsPmdowYpj+sj6yXKVtsA==",
+  "success": true,
+  "projectFilePath": "/home/kamil/Projects/Worst/src/Backend.Persistence/Backend.Persistence.csproj",
+  "expectedPackageFiles": [
+    "/home/kamil/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
