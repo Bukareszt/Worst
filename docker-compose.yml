@@ -1,6 +1,17 @@
 version: "3.8"
 services:
-  backend:
-    context: ./backend
-  frontend:
-    context: ./frontend
+  #backend:
+  #build: ./backend
+  #frontend:
+  #build: ./frontend
+  db:
+    image: postgres
+      #volumes:
+      #- db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: jp2gmd
+      POSTGRES_DB: mlm
+volumes:
+  db-data:

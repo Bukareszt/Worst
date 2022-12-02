@@ -1,0 +1,12 @@
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.csproj.AssemblyReference.cache
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.GeneratedMSBuildEditorConfig.editorconfig
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.AssemblyInfoInputs.cache
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.AssemblyInfo.cs
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.csproj.CoreCompileInputs.cache
+/home/kamil/Projects/Worst/backend/Backend.Package/bin/Debug/net7.0/Backend.Package.deps.json
+/home/kamil/Projects/Worst/backend/Backend.Package/bin/Debug/net7.0/Backend.Package.dll
+/home/kamil/Projects/Worst/backend/Backend.Package/bin/Debug/net7.0/Backend.Package.pdb
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.dll
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/refint/Backend.Package.dll
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/Backend.Package.pdb
+/home/kamil/Projects/Worst/backend/Backend.Package/obj/Debug/net7.0/ref/Backend.Package.dll
