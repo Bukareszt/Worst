@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<UserAuthenticationService>();
-builder.Services.AddDbContext<UserDbContext>();
+builder.Services.AddDbContext<BackendDbContext>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddHostedService<BaseHost>();
 

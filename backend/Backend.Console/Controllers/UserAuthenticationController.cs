@@ -26,17 +26,11 @@ namespace Backend.Console
         }
 
         [HttpPost]
-        [Route("login/{login}")]
-        public void Login(UserLoginDto loginDto)
+        [Route("login")]
+        public void Login(UserLoginDto login)
         {
+            logger.LogInformation("Logging user: {Username}", login.Username);
+            authenticationService.Login(login);
         }
-
-        [HttpGet]
-        [Route("users")]
-        public IEnumerable<UserDto> GetUsers()
-        {
-            return authenticationService.GetUsers();
-        }
-
     }
 }

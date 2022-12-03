@@ -16,8 +16,6 @@ namespace Backend.Persistence
 
         void SaveUser(User user);
 
-        //IEnumerable<Contact> GetImmediateContacts(Guid id);
-
-        //IEnumerable<Contact> GetAllContacts(Guid id);
+        IEnumerable<DirectContact> GetContacts(Guid id);
     }
 }

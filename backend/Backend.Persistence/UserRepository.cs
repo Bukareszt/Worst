@@ -6,9 +6,9 @@ namespace Backend.Persistence
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserDbContext context;
+        private readonly BackendDbContext context;
 
-        public UserRepository(UserDbContext context)
+        public UserRepository(BackendDbContext context)
         {
             this.context = context;
         }
@@ -76,14 +76,20 @@ namespace Backend.Persistence
             context.SaveChanges();
         }
 
-        /*public IEnumerable<Contact> GetImmediateContacts(Guid id)
+        public IEnumerable<DirectContact> GetContacts(Guid id)
         {
-            throw new NotImplementedException();
+            return context.DirectRelations
+              .Where(rel => rel.Receiver.Id == id)
+              .Include(dc => dc.AssociatedContacts)
+              .Select(dc => new DirectContact
+              {
+                  ContactProfile = new User
+                  {
+                      Username = dc.Giver.Username,
+
+                  }
+              });
         }
 
-        public IEnumerable<Contact> GetAllContacts(Guid id)
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }

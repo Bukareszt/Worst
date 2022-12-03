@@ -15,5 +15,7 @@ namespace Backend.Persistence.Entities
         public string Surname { get; set; } = "";
 
         public string Email { get; set; } = "";
+
+        public IEnumerable<DirectRelationEntity> DirectContacts { get; set; }
     }
 }

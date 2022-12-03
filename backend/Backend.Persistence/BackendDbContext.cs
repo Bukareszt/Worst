@@ -5,7 +5,7 @@ using Backend.Persistence.Entities;
 
 namespace Backend.Persistence
 {
-    public class UserDbContext : DbContext
+    public class BackendDbContext : DbContext
     {
         public const string CONNECTION_STRING = "Host=localhost;Database=mlm;Username=postgres;Password=jp2gmd";
 
