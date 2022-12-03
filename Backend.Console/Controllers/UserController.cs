@@ -44,6 +44,7 @@ namespace Backend.Console
         public IActionResult UpdateUser()
         {
             return StatusCode(200);
+
         }
 
         [HttpDelete]

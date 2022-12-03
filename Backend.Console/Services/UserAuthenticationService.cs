@@ -35,6 +35,7 @@ namespace Backend.Console.Services
                 Name = registration.Name,
                 Email = registration.Email,
                 Surname = registration.Surname,
+                PhoneNumber = registration.PhoneNumber
             };
 
             user.PasswordHash = GetPasswordHash(user, registration.Password);

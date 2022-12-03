@@ -110,7 +110,8 @@ namespace Backend.Persistence
                 Name = user.Name,
                 Surname = user.Surname,
                 Email = user.Email,
-                PasswordHash = user.PasswordHash
+                PasswordHash = user.PasswordHash,
+                PhoneNumber = user.PhoneNumber
             });
 
             context.SaveChanges();
