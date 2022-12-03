@@ -7,7 +7,7 @@ namespace Backend.Console
 {
     public class HandshakeResult
     {
-        public Guid Handshake;
+        public Guid Handshake { get; set; }
     }
 
 

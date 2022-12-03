@@ -69,7 +69,7 @@ namespace Backend.Persistence
 
             foreach (var contact in contacts)
             {
-              //contact.Contacts = context.IndirectRelations
+                //contact.Contacts = context.IndirectRelations
             }
 
             if (user is null)
@@ -135,6 +135,11 @@ namespace Backend.Persistence
             });
 
             context.SaveChanges();
+        }
+
+        public void AddIndirectContact(string receiverId, Guid giverid, IEnumerable<string> contacts)
+        {
+
         }
 
 

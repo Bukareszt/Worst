@@ -44,7 +44,7 @@ namespace Backend.Console.Services
             IEnumerable<string> associatedContacts = handshake.AssociatedContacts.Split(",");
 
             userRepository.AddContact(username, handshake.GiverId);
-            //userRepository.AddIndirectContacts(username, handshake.GiverId, associatedContacts);
+            userRepository.AddIndirectContacts(username, handshake.GiverId, associatedContacts);
         }
     }
 }
