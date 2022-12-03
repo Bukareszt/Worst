@@ -1,9 +1,16 @@
 version: "3.8"
 services:
-  #backend:
-  #build: ./backend
-  #frontend:
-  #build: ./frontend
+  posting:
+  build:
+  context: ./PostingService
+  dockerfile: Dockerfile
+  restart: always
+  ports:
+  - 80:5000
+  networks:
+  - internal
+  environment:
+  CONNECTION_STRING: Host=posting-db;User=root;Password=root;Port=5432
   db:
     image: postgres
       #volumes:
