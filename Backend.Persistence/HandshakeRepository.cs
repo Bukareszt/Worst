@@ -39,5 +39,11 @@ namespace Backend.Persistence
 
             context.SaveChanges();
         }
+
+        public void DeleteHandshake(Guid id)
+        {
+            context.Handshakes.Remove(context.Handshakes.SingleOrDefault(h => h.Id == id));
+            context.SaveChanges();
+        }
     }
 }

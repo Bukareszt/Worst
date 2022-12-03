@@ -34,7 +34,6 @@ namespace Backend.Console.Services
                 AssociatedContacts = associatedContacts
             });
 
-
             return id;
         }
 
@@ -43,8 +42,8 @@ namespace Backend.Console.Services
             var handshake = repository.GetHandshake(handshakeId);
             IEnumerable<string> associatedContacts = handshake.AssociatedContacts.Split(",");
 
-            userRepository.AddContact(username, handshake.GiverId);
-            userRepository.AddIndirectContacts(username, handshake.GiverId, associatedContacts);
+            userRepository.AddContact(username, handshake.GiverId, associatedContacts);
+            repository.DeleteHandshake(handshakeId);
         }
     }
 }

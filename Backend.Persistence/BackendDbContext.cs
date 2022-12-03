@@ -20,8 +20,10 @@ namespace Backend.Persistence
             builder.UseNpgsql(CONNECTION_STRING);
         }
 
-        /*protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-        }*/
+            builder.Entity<IndirectRelationEntity>()
+              .HasKey(r => new { r.UserId, r.ContactId });
+        }
     }
 }

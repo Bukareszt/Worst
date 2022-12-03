@@ -67,11 +67,6 @@ namespace Backend.Persistence
                   PhoneNumber = user.PhoneNumber
               });
 
-            foreach (var contact in contacts)
-            {
-                //contact.Contacts = context.IndirectRelations
-            }
-
             if (user is null)
             {
                 throw new ArgumentException($"User with username: {username} does not exist");
@@ -121,27 +116,29 @@ namespace Backend.Persistence
             context.SaveChanges();
         }
 
-        public void AddContact(string receiverId, Guid giverId)
+        public void AddContact(string receiverId, Guid giverId, IEnumerable<string> associatedContacts)
         {
             var receiver = context.Users.SingleOrDefault(u => u.Username == receiverId);
 
             var giver = context.Users.SingleOrDefault(u => u.Id == giverId);
 
-            context.DirectRelations.Add(new DirectContactEntity
+            var newContact = new DirectContactEntity
             {
                 GiverId = giver.Id,
                 ReceiverId = receiver.Id,
                 Id = Guid.NewGuid()
-            });
+            };
+
+            context.DirectRelations.Add(newContact);
+
+            /*context.IndirectRelations.AddRange(associatedContacts.Select(username => new IndirectRelationEntity
+            {
+                UserId = context.Users.SingleOrDefault(u => u.Username == username)!.Id,
+                ContactId = newContact.Id
+            }));*/
 
             context.SaveChanges();
         }
-
-        public void AddIndirectContact(string receiverId, Guid giverid, IEnumerable<string> contacts)
-        {
-
-        }
-
 
         public IEnumerable<DirectContact> GetContacts(Guid id)
         {

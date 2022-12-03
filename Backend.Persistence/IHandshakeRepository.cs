@@ -6,5 +6,6 @@ namespace Backend.Persistence
     {
         Handshake GetHandshake(Guid id);
         void CreateHandshake(Handshake handshake);
+        void DeleteHandshake(Guid id);
     }
 }
