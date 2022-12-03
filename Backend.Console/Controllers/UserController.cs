@@ -19,19 +19,22 @@ namespace Backend.Console
         }
 
         [HttpGet]
-        [Route("{username}")]
-        public User GetProfile(string username)
+        [Route("all")]
+        public IEnumerable<User> GetAll([FromQuery] string username)
+        {
+            logger.LogInformation("Getting profile of user {Username}", username);
+
+            var user = profileService.GetProfile(username);
+            return user.Contacts;
+        }
+
+        [HttpGet]
+        public User Get([FromQuery] string username)
         {
             logger.LogInformation("Getting profile of user {Username}", username);
 
             var user = profileService.GetProfile(username);
             return user;
-        }
-
-        [HttpGet]
-        public User[] GetProfiles()
-        {
-            return new User[0];
         }
 
         [HttpPost]

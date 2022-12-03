@@ -7,7 +7,7 @@ namespace Backend.Persistence
 {
     public class BackendDbContext : DbContext
     {
-        public const string CONNECTION_STRING = "Host=localhost;Database=mlm;Username=postgres;Password=jp2gmd";
+        public const string CONNECTION_STRING = "Host=localhost;Database=mlm;Port=5442;Username=postgres;Password=jp2gmd";
 
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<HandshakeEntity> Handshakes { get; set; }

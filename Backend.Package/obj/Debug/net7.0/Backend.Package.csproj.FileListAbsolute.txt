@@ -22,3 +22,15 @@
 /home/kamil/Projects/Worst/Backend.Package/obj/Debug/net7.0/refint/Backend.Package.dll
 /home/kamil/Projects/Worst/Backend.Package/obj/Debug/net7.0/Backend.Package.pdb
 /home/kamil/Projects/Worst/Backend.Package/obj/Debug/net7.0/ref/Backend.Package.dll
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\bin\Debug\net7.0\Backend.Package.deps.json
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\bin\Debug\net7.0\Backend.Package.dll
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\bin\Debug\net7.0\Backend.Package.pdb
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.csproj.AssemblyReference.cache
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.AssemblyInfoInputs.cache
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.AssemblyInfo.cs
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.csproj.CoreCompileInputs.cache
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.dll
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\refint\Backend.Package.dll
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\Backend.Package.pdb
+C:\Users\48694\Desktop\hacaton\kot\xd\xd31!\Worst\Backend.Package\obj\Debug\net7.0\ref\Backend.Package.dll

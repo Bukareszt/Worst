@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FS4XLKHpRMl+UdJnaynM8BqgN2XY5FwgBQhviv2WUVfOAr0aN0iOuBVWWggsO55f/a0JL3z3DXPXK9viPFU/MA==",
+  "dgSpecHash": "JTxrRjepfLKC8GIJvKIXO83TBtMA4WIzwCe8tjGSVQrT37UmQfQCFbUX3JGR6FWJfrY3ko59liRK10eu71xC9Q==",
   "success": true,
-  "projectFilePath": "/home/kamil/Projects/Worst/Backend.Package/Backend.Package.csproj",
-  "expectedPackageFiles": [
-    "/home/kamil/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\Backend.Package.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

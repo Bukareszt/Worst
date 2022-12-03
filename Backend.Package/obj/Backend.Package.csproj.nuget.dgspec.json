@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/kamil/Projects/Worst/Backend.Package/Backend.Package.csproj": {}
+    "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\Backend.Package.csproj": {}
   },
   "projects": {
-    "/home/kamil/Projects/Worst/Backend.Package/Backend.Package.csproj": {
+    "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\Backend.Package.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamil/Projects/Worst/Backend.Package/Backend.Package.csproj",
+        "projectUniqueName": "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\Backend.Package.csproj",
         "projectName": "Backend.Package",
-        "projectPath": "/home/kamil/Projects/Worst/Backend.Package/Backend.Package.csproj",
-        "packagesPath": "/home/kamil/.nuget/packages/",
-        "outputPath": "/home/kamil/Projects/Worst/Backend.Package/obj/",
+        "projectPath": "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\Backend.Package.csproj",
+        "packagesPath": "C:\\Users\\48694\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48694\\Desktop\\hacaton\\kot\\xd\\xd31!\\Worst\\Backend.Package\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamil/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\48694\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,18 +50,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.0, 7.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
