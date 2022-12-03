@@ -39,12 +39,5 @@ namespace Backend.Persistence
 
             context.SaveChanges();
         }
-
-        public void AcceptHandshake(Guid userId, Handshake handshake)
-        {
-
-            throw new NotImplementedException();
-        }
     }
-
 }

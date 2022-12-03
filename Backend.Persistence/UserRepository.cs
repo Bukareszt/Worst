@@ -67,6 +67,11 @@ namespace Backend.Persistence
                   PhoneNumber = user.PhoneNumber
               });
 
+            foreach (var contact in contacts)
+            {
+              //contact.Contacts = context.IndirectRelations
+            }
+
             if (user is null)
             {
                 throw new ArgumentException($"User with username: {username} does not exist");
@@ -131,6 +136,7 @@ namespace Backend.Persistence
 
             context.SaveChanges();
         }
+
 
         public IEnumerable<DirectContact> GetContacts(Guid id)
         {

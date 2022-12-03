@@ -41,7 +41,10 @@ namespace Backend.Console.Services
         public void AcceptHandshake(string username, Guid handshakeId)
         {
             var handshake = repository.GetHandshake(handshakeId);
+            IEnumerable<string> associatedContacts = handshake.AssociatedContacts.Split(",");
+
             userRepository.AddContact(username, handshake.GiverId);
+            //userRepository.AddIndirectContacts(username, handshake.GiverId, associatedContacts);
         }
     }
 }
