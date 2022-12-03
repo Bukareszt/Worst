@@ -5,16 +5,16 @@ namespace Backend.Console.Hosts
 {
     public class BaseHost : IHostedService
     {
-        private readonly IUserRepository repository;
+        private readonly IServiceProvider serviceProvider;
 
         public BaseHost(IServiceProvider provider)
         {
-            //this.repository = provider.GetService<IUserRepository>();
+            this.serviceProvider = provider;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            //repository.Migrate();
+            serviceProvider.GetService<IUserRepository>()?.Migrate();
             return Task.CompletedTask;
         }
 
