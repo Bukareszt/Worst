@@ -30,18 +30,5 @@ namespace Backend.Console
             logger.LogInformation("Logging user: {Username}", login.Username);
             return authenticationService.Login(login);
         }
-
-        [HttpGet]
-        public bool IsLoggedIn()
-        {
-            return true;
-        }
-
-        [HttpDelete]
-        public string DeleteUser()
-        {
-            return "ITo assure RODO compliance please, contact Your nearest administrator";
-        }
-
     }
 }
