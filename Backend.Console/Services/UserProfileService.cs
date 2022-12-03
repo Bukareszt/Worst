@@ -15,7 +15,7 @@ namespace Backend.Console.Services
 
         public User GetProfile(string Username)
         {
-            return repository.GetUser(Username);
+            return repository.GetProfile(Username);
         }
     }
 }

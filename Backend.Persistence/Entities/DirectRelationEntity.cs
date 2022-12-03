@@ -6,15 +6,15 @@ namespace Backend.Persistence.Entities
     {
         public Guid Id { get; set; }
 
-        //public Guid GiverId { get; set; }
+        public Guid GiverId { get; set; }
 
-        //[ForeignKey("GiverId")]
-        //public UserEntity Giver { get; set; }
+        [ForeignKey("GiverId")]
+        public UserEntity Giver { get; set; }
 
-        //public Guid ReceiverId { get; set; }
+        public Guid ReceiverId { get; set; }
 
-        //[ForeignKey("ReceiverId")]
-        //public UserEntity Receiver { get; set; }
+        [ForeignKey("ReceiverId")]
+        public UserEntity Receiver { get; set; }
 
         //public IEnumerable<IndirectRelationEntity> AssociatedContacts { get; set; }
     }

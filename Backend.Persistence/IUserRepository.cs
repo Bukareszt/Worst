@@ -10,6 +10,8 @@ namespace Backend.Persistence
 
         User GetUser(Guid id);
 
+        User GetProfile(string username);
+
         IEnumerable<User> GetUsers();
 
         bool UserExists(string username);

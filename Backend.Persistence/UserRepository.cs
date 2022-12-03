@@ -28,6 +28,9 @@ namespace Backend.Persistence
             return new User
             {
                 Username = user.Username,
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
                 PasswordHash = user.PasswordHash
             };
         }
@@ -40,6 +43,7 @@ namespace Backend.Persistence
             {
                 throw new ArgumentException($"User with username: {username} does not exist");
             }
+
             return new User
             {
                 Username = user.Username,
@@ -88,6 +92,9 @@ namespace Backend.Persistence
             context.Users.Add(new UserEntity
             {
                 Username = user.Username,
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
                 PasswordHash = user.PasswordHash
             });
 

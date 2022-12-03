@@ -32,6 +32,9 @@ namespace Backend.Console.Services
             {
                 Id = Guid.NewGuid(),
                 Username = registration.Username,
+                Name = registration.Name,
+                Email = registration.Email,
+                Surname = registration.Surname,
             };
 
             user.PasswordHash = GetPasswordHash(user, registration.Password);
