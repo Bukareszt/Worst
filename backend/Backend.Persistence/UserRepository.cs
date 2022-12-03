@@ -78,7 +78,8 @@ namespace Backend.Persistence
 
         public IEnumerable<DirectContact> GetContacts(Guid id)
         {
-            return context.DirectRelations
+          throw new NotImplementedException();
+            /*return context.DirectRelations
               .Where(rel => rel.Receiver.Id == id)
               .Include(dc => dc.AssociatedContacts)
               .Select(dc => new DirectContact
@@ -88,7 +89,7 @@ namespace Backend.Persistence
                       Username = dc.Giver.Username,
 
                   }
-              });
+              });*/
         }
 
     }

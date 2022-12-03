@@ -4,8 +4,8 @@ namespace Backend.Persistence.Entities
     {
         public Guid Id { get; set; }
 
-        public UserEntity GivenUser { get; set; }
+        //public UserEntity GivenUser { get; set; }
 
-        public IEnumerable<DirectRelationEntity> AssociatedRelations { get; set; }
+        //public IEnumerable<DirectRelationEntity> AssociatedRelations { get; set; }
     }
 }

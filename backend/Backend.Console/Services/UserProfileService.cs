@@ -20,7 +20,8 @@ namespace Backend.Console.Services
 
         public IEnumerable<UserContactDto> GetContacts(Guid id)
         {
-          return repository.GetContacts(id);
+          throw new NotImplementedException();
+          //return repository.GetContacts(id);
         }
     }
 }

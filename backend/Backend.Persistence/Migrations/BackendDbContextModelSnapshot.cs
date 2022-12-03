@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Persistence.Migrations
 {
     [DbContext(typeof(BackendDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    partial class BackendDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -28,22 +28,12 @@ namespace Backend.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("GiverId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("IndirectRelationEntityId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("ReceiverId")
+                    b.Property<Guid?>("UserEntityId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GiverId");
-
-                    b.HasIndex("IndirectRelationEntityId");
-
-                    b.HasIndex("ReceiverId");
+                    b.HasIndex("UserEntityId");
 
                     b.ToTable("DirectRelations");
                 });
@@ -74,12 +64,7 @@ namespace Backend.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("GivenUserId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("GivenUserId");
 
                     b.ToTable("IndirectRelations");
                 });
@@ -145,25 +130,9 @@ namespace Backend.Persistence.Migrations
 
             modelBuilder.Entity("Backend.Persistence.Entities.DirectRelationEntity", b =>
                 {
-                    b.HasOne("Backend.Persistence.Entities.UserEntity", "Giver")
-                        .WithMany()
-                        .HasForeignKey("GiverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Backend.Persistence.Entities.IndirectRelationEntity", null)
-                        .WithMany("AssociatedRelations")
-                        .HasForeignKey("IndirectRelationEntityId");
-
-                    b.HasOne("Backend.Persistence.Entities.UserEntity", "Receiver")
-                        .WithMany()
-                        .HasForeignKey("ReceiverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Giver");
-
-                    b.Navigation("Receiver");
+                    b.HasOne("Backend.Persistence.Entities.UserEntity", null)
+                        .WithMany("DirectContacts")
+                        .HasForeignKey("UserEntityId");
                 });
 
             modelBuilder.Entity("Backend.Persistence.Entities.HandshakeEntity", b =>
@@ -175,17 +144,6 @@ namespace Backend.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Giver");
-                });
-
-            modelBuilder.Entity("Backend.Persistence.Entities.IndirectRelationEntity", b =>
-                {
-                    b.HasOne("Backend.Persistence.Entities.UserEntity", "GivenUser")
-                        .WithMany()
-                        .HasForeignKey("GivenUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("GivenUser");
                 });
 
             modelBuilder.Entity("Backend.Persistence.Entities.MessageEntity", b =>
@@ -207,9 +165,9 @@ namespace Backend.Persistence.Migrations
                     b.Navigation("Receiver");
                 });
 
-            modelBuilder.Entity("Backend.Persistence.Entities.IndirectRelationEntity", b =>
+            modelBuilder.Entity("Backend.Persistence.Entities.UserEntity", b =>
                 {
-                    b.Navigation("AssociatedRelations");
+                    b.Navigation("DirectContacts");
                 });
 #pragma warning restore 612, 618
         }

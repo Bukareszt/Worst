@@ -23,8 +23,9 @@ namespace Backend.Console.Services
         public void Register(UserRegistrationDto registration)
         {
             var userExists = repository.UserExists(registration.Username);
-            if(userExists){
-              throw new InvalidOperationException($"User with name {registration.Username} already exists");
+            if (userExists)
+            {
+                throw new InvalidOperationException($"User with name {registration.Username} already exists");
             }
 
             var user = new User
@@ -38,14 +39,20 @@ namespace Backend.Console.Services
             repository.SaveUser(user);
         }
 
+        public bool Login(UserLoginDto login)
+        {
+            var user = repository.GetUser(login.Username);
+            if (user is null)
+            {
+                throw new InvalidOperationException($"User with username {login.Username} doesn't exist");
+            }
+            var authResult = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, login.Password);
+            return authResult == PasswordVerificationResult.Success;
+        }
+
         public string GetPasswordHash(User user, string password)
         {
             return passwordHasher.HashPassword(user, password);
-        }
-
-        public IEnumerable<UserDto> GetUsers()
-        {
-            return repository.GetUsers().Select(u => new UserDto { Username = u.Username });
         }
     }
 }

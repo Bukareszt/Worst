@@ -32,7 +32,7 @@ namespace Backend.Console
         public void GetContacts(GetContactsQuery request)
         {
             logger.LogInformation("Geting contacts of user {Id}", request.Id);
-            return profileService.
+            //return profileService;
         }
     }
 }

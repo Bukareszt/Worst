@@ -14,7 +14,11 @@ namespace Backend.Console.Hosts
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            serviceProvider.GetService<IUserRepository>()?.Migrate();
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var repository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
+                repository.Migrate();
+            }
             return Task.CompletedTask;
         }
 

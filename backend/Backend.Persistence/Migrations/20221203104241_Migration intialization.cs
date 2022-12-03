@@ -6,11 +6,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Backend.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialmigrations : Migration
+    public partial class Migrationintialization : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "IndirectRelations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IndirectRelations", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -28,6 +39,23 @@ namespace Backend.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DirectRelations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserEntityId = table.Column<Guid>(type: "uuid", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DirectRelations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DirectRelations_Users_UserEntityId",
+                        column: x => x.UserEntityId,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Handshakes",
                 columns: table => new
                 {
@@ -41,24 +69,6 @@ namespace Backend.Persistence.Migrations
                     table.ForeignKey(
                         name: "FK_Handshakes_Users_GiverId",
                         column: x => x.GiverId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "IndirectRelations",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    GivenUserId = table.Column<Guid>(type: "uuid", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_IndirectRelations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_IndirectRelations_Users_GivenUserId",
-                        column: x => x.GivenUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -91,61 +101,15 @@ namespace Backend.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "DirectRelations",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    GiverId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ReceiverId = table.Column<Guid>(type: "uuid", nullable: false),
-                    IndirectRelationEntityId = table.Column<Guid>(type: "uuid", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DirectRelations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_DirectRelations_IndirectRelations_IndirectRelationEntityId",
-                        column: x => x.IndirectRelationEntityId,
-                        principalTable: "IndirectRelations",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DirectRelations_Users_GiverId",
-                        column: x => x.GiverId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DirectRelations_Users_ReceiverId",
-                        column: x => x.ReceiverId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
-                name: "IX_DirectRelations_GiverId",
+                name: "IX_DirectRelations_UserEntityId",
                 table: "DirectRelations",
-                column: "GiverId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DirectRelations_IndirectRelationEntityId",
-                table: "DirectRelations",
-                column: "IndirectRelationEntityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DirectRelations_ReceiverId",
-                table: "DirectRelations",
-                column: "ReceiverId");
+                column: "UserEntityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Handshakes_GiverId",
                 table: "Handshakes",
                 column: "GiverId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_IndirectRelations_GivenUserId",
-                table: "IndirectRelations",
-                column: "GivenUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_OwnerId",
@@ -168,10 +132,10 @@ namespace Backend.Persistence.Migrations
                 name: "Handshakes");
 
             migrationBuilder.DropTable(
-                name: "Messages");
+                name: "IndirectRelations");
 
             migrationBuilder.DropTable(
-                name: "IndirectRelations");
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Users");

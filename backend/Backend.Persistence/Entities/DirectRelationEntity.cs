@@ -4,10 +4,10 @@ namespace Backend.Persistence.Entities
     {
         public Guid Id { get; set; }
 
-        public UserEntity Giver { get; set; }
+        //public UserEntity Giver { get; set; }
 
-        public UserEntity Receiver { get; set; }
+        //public UserEntity Receiver { get; set; }
 
-        public IEnumerable<IndirectRelationEntity> AssociatedContacts { get; set; }
+        //public IEnumerable<IndirectRelationEntity> AssociatedContacts { get; set; }
     }
 }
