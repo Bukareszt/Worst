@@ -30,9 +30,11 @@ builder.Services.AddSwaggerGen(options => options.SwaggerDoc("v1", new OpenApiIn
 
 builder.Services.AddScoped<UserAuthenticationService>();
 builder.Services.AddScoped<UserProfileService>();
+builder.Services.AddScoped<HandshakeService>();
 
 builder.Services.AddDbContext<BackendDbContext>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IHandshakeRepository, HandshakeRepository>();
 
 builder.Services.AddHostedService<BaseHost>();
 

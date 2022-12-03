@@ -27,10 +27,8 @@ namespace Backend.Persistence
             }
             return new User
             {
+                Id = user.Id,
                 Username = user.Username,
-                Name = user.Name,
-                Surname = user.Surname,
-                Email = user.Email,
                 PasswordHash = user.PasswordHash
             };
         }
@@ -46,6 +44,7 @@ namespace Backend.Persistence
 
             return new User
             {
+                Id = user.Id,
                 Username = user.Username,
                 PasswordHash = user.PasswordHash
             };
@@ -61,6 +60,7 @@ namespace Backend.Persistence
             }
             return new User
             {
+                Id = user.Id,
                 Username = user.Username,
                 Name = user.Name,
                 Surname = user.Surname,
