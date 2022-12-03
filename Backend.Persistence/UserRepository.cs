@@ -53,6 +53,7 @@ namespace Backend.Persistence
         public User GetProfile(string username)
         {
             UserEntity? user = context.Users.SingleOrDefault(c => c.Username == username);
+
             IEnumerable<User> contacts = context.DirectRelations
               .Where(dc => dc.GiverId == user.Id || dc.ReceiverId == user.Id)
               .Select(dc => dc.ReceiverId == user.Id ? dc.Giver : dc.Receiver)
@@ -62,7 +63,8 @@ namespace Backend.Persistence
                   Username = user.Username,
                   Name = user.Name,
                   Surname = user.Surname,
-                  Email = user.Email
+                  Email = user.Email,
+                  PhoneNumber = user.PhoneNumber
               });
 
             if (user is null)
