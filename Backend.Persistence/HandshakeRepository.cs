@@ -13,6 +13,18 @@ namespace Backend.Persistence
             this.context = context;
         }
 
+        public Handshake GetHandshake(Guid id)
+        {
+            var handshake = context.Handshakes.Include(c => c.Giver).SingleOrDefault(h => h.Id == id);
+            if (handshake is null) { throw new InvalidOperationException($"Handshake {id} doesn't exist!"); }
+            return new Handshake
+            {
+                Id = handshake.Id,
+                GiverId = handshake.Giver.Id,
+                AssociatedContacts = handshake.AssociatedUsers
+            };
+        }
+
         public void CreateHandshake(Handshake handshake)
         {
 

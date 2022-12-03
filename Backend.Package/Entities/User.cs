@@ -15,5 +15,7 @@ namespace Backend.Package.Entities
         public string Surname { get; set; }
 
         public string Email { get; set; }
+
+        public IEnumerable<User> Contacts { get; set; }
     }
 }

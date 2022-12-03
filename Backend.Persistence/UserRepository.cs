@@ -53,18 +53,31 @@ namespace Backend.Persistence
         public User GetProfile(string username)
         {
             UserEntity? user = context.Users.SingleOrDefault(c => c.Username == username);
+            IEnumerable<User> contacts = context.DirectRelations
+              .Where(dc => dc.GiverId == user.Id || dc.ReceiverId == user.Id)
+              .Select(dc => dc.ReceiverId == user.Id ? dc.Giver : dc.Receiver)
+              .Select(user => new User
+              {
+                  Id = user.Id,
+                  Username = user.Username,
+                  Name = user.Name,
+                  Surname = user.Surname,
+                  Email = user.Email
+              });
 
             if (user is null)
             {
                 throw new ArgumentException($"User with username: {username} does not exist");
             }
+
             return new User
             {
                 Id = user.Id,
                 Username = user.Username,
                 Name = user.Name,
                 Surname = user.Surname,
-                Email = user.Email
+                Email = user.Email,
+                Contacts = contacts
             };
         }
 
@@ -96,6 +109,22 @@ namespace Backend.Persistence
                 Surname = user.Surname,
                 Email = user.Email,
                 PasswordHash = user.PasswordHash
+            });
+
+            context.SaveChanges();
+        }
+
+        public void AddContact(string receiverId, Guid giverId)
+        {
+            var receiver = context.Users.SingleOrDefault(u => u.Username == receiverId);
+
+            var giver = context.Users.SingleOrDefault(u => u.Id == giverId);
+
+            context.DirectRelations.Add(new DirectContactEntity
+            {
+                GiverId = giver.Id,
+                ReceiverId = receiver.Id,
+                Id = Guid.NewGuid()
             });
 
             context.SaveChanges();

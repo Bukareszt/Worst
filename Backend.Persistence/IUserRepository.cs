@@ -18,6 +18,8 @@ namespace Backend.Persistence
 
         void SaveUser(User user);
 
+        void AddContact(string receiver, Guid giver);
+
         IEnumerable<DirectContact> GetContacts(Guid id);
     }
 }

@@ -37,5 +37,11 @@ namespace Backend.Console.Services
 
             return id;
         }
+
+        public void AcceptHandshake(string username, Guid handshakeId)
+        {
+            var handshake = repository.GetHandshake(handshakeId);
+            userRepository.AddContact(username, handshake.GiverId);
+        }
     }
 }
