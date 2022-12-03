@@ -27,5 +27,29 @@ namespace Backend.Console
             var user = profileService.GetProfile(username);
             return user;
         }
+
+        [HttpGet]
+        public User[] GetProfiles()
+        {
+            return new User[0];
+        }
+
+        [HttpPost]
+        public IActionResult CreateUser()
+        {
+            return StatusCode(200);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser()
+        {
+            return StatusCode(200);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete()
+        {
+            return StatusCode(200);
+        }
     }
 }
