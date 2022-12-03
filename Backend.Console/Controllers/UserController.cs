@@ -19,11 +19,12 @@ namespace Backend.Console
         }
 
         [HttpGet]
-        public User GetProfile(GetProfileDto request)
+        [Route("{username}")]
+        public User GetProfile(string username)
         {
-            logger.LogInformation("Getting profile of user {Username}", request.Username);
+            logger.LogInformation("Getting profile of user {Username}", username);
 
-            var user = profileService.GetProfile(request.Username);
+            var user = profileService.GetProfile(username);
             return user;
         }
     }
