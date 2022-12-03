@@ -27,10 +27,10 @@ namespace Backend.Console
 
         [HttpPost]
         [Route("login")]
-        public void Login(UserLoginDto login)
+        public bool Login(UserLoginDto login)
         {
             logger.LogInformation("Logging user: {Username}", login.Username);
-            authenticationService.Login(login);
+            return authenticationService.Login(login);
         }
     }
 }
